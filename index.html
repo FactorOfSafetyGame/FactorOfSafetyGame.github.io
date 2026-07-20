@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Factor of Safety</title>
+	<meta name="description" content="Factor of Safety — a horror game.">
+
+	<!-- VT323: an authentic pixel-terminal typeface. Falls back to Consolas/Courier. -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- CRT scanline / vignette overlay (purely decorative) -->
+	<div class="crt-overlay" aria-hidden="true"></div>
+
+	<div class="crt-screen">
+		<div class="wrap">
+
+			<!-- ===== Header ===== -->
+			<header class="site-header">
+				<h1 class="site-title">Factor of Safety<span class="cursor" aria-hidden="true">&nbsp;</span></h1>
+				<p class="site-tagline">// A horror game</p>
+
+				<nav class="site-nav" aria-label="Primary">
+					<a href="index.html">Home</a>
+					<a href="#about">About</a>
+					<a href="#media">Media</a>
+					<a href="#contact">Contact</a>
+				</nav>
+			</header>
+
+			<!-- ===== Main content: sample modules ===== -->
+			<main class="modules">
+
+				<!-- Sample text box -->
+				<section class="module" id="about">
+					<div class="module__bar">Sample text box</div>
+					<div class="module__body">
+						<p>
+							This is a sample text container. Replace this copy with a
+							description of Factor of Safety — the premise, the setting,
+							or whatever hook draws players in.
+						</p>
+						<p>
+							Modules like this one can be duplicated to build out the page.
+							Each carries its own title bar and body, so the layout stays
+							consistent as content grows.
+						</p>
+					</div>
+				</section>
+
+				<!-- Sample image container -->
+				<section class="module" id="media">
+					<div class="module__bar">Sample image container</div>
+					<div class="module__body">
+						<div class="image-frame">
+							<span class="image-frame__placeholder">
+								[ IMAGE PLACEHOLDER ]<br>
+								Drop a screenshot or key art here
+							</span>
+							<!-- To use a real image, replace the placeholder above with:
+							<img src="images/your-image.png" alt="Describe the image"> -->
+						</div>
+					</div>
+				</section>
+
+				<!-- Two modules side by side on wider screens -->
+				<div class="modules modules--split">
+					<section class="module">
+						<div class="module__bar">Sample text box</div>
+						<div class="module__body">
+							<p>
+								A narrower text module. Useful for feature callouts,
+								patch notes, or short blurbs beside an image.
+							</p>
+						</div>
+					</section>
+
+					<section class="module">
+						<div class="module__bar">Sample image container</div>
+						<div class="module__body">
+							<div class="image-frame">
+								<span class="image-frame__placeholder">
+									[ IMAGE PLACEHOLDER ]
+								</span>
+							</div>
+						</div>
+					</section>
+				</div>
+
+			</main>
+
+			<!-- ===== Footer ===== -->
+			<footer class="site-footer" id="contact">
+				<p>Factor of Safety &copy; 2026 &mdash; All systems nominal.</p>
+			</footer>
+
+		</div>
+	</div>
+</body>
+</html>
