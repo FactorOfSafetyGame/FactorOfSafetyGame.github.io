@@ -102,16 +102,7 @@ body {
 .site-header {
 	border-bottom: 1px solid var(--crt-line);
 	padding-bottom: 1.25rem;
-	margin-bottom: 2rem;
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	gap: 1.5rem;
-}
-
-.site-header__main {
-	flex: 1 1 auto;
-	min-width: 0;
+	margin-bottom: 1rem;
 }
 
 .site-title {
@@ -142,31 +133,23 @@ body {
 	letter-spacing: 2px;
 }
 
-/* ---- Social widgets ----------------------------------------------------- */
-/* A subtle bordered strip tucked into the top-right of the header. Vertical
-   on wide screens; collapses to a horizontal row on narrow ones. */
-.site-social {
-	flex: 0 0 auto;
+/* ---- Social bar --------------------------------------------------------- */
+/* Default (narrow / flex): an in-flow horizontal box between header and main.
+   On wide screens it becomes a fixed vertical rail in the side gutter (see the
+   min-width media query below). */
+.social-bar {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 0.6rem;
-	padding: 0.6rem;
+	padding: 0.6rem 0.8rem;
+	margin-bottom: 2rem;
 	border: 1px solid var(--crt-line);
-	background: rgba(125, 253, 125, 0.03);
+	background: rgba(8, 12, 8, 0.94);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 620px) {
-	.site-header {
-		flex-direction: column;
-	}
-
-	.site-social {
-		flex-direction: row;
-		align-self: flex-start;
-	}
-}
-
-.site-social a {
+.social-bar__item {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -177,19 +160,88 @@ body {
 	transition: all 0.15s ease;
 }
 
-.site-social a:hover,
-.site-social a:focus {
+.social-bar__item:hover,
+.social-bar__item:focus {
 	color: var(--crt-green-hot);
 	border-color: var(--crt-green);
 	box-shadow: 0 0 8px var(--crt-glow);
 	outline: none;
 }
 
-.site-social svg {
+.social-bar__item svg {
 	width: 1.3rem;
 	height: 1.3rem;
 	fill: currentColor;
 	filter: drop-shadow(0 0 3px var(--crt-glow));
+}
+
+/* Disabled item (e.g. Steam, not live yet): grayed out, no glow. */
+.social-bar__item.is-disabled {
+	color: var(--crt-green-dim);
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.social-bar__item.is-disabled svg {
+	filter: none;
+}
+
+.social-bar__item.is-disabled:hover,
+.social-bar__item.is-disabled:focus {
+	color: var(--crt-green-dim);
+	border-color: var(--crt-line);
+	box-shadow: none;
+}
+
+/* "Coming soon" tooltip for disabled items. */
+.social-bar__item[data-tooltip]::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	padding: 0.25rem 0.5rem;
+	background: var(--crt-panel);
+	border: 1px solid var(--crt-line);
+	color: var(--crt-green);
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.15s ease;
+}
+
+.social-bar__item[data-tooltip]:hover::after,
+.social-bar__item[data-tooltip]:focus::after {
+	opacity: 1;
+}
+
+/* Wide screens: lift the bar out of flow into a fixed vertical rail that sits
+   in the left gutter beside the centered column and stays put while scrolling.
+   Breakpoint chosen so the gutter is wide enough to hold the rail without
+   overlapping content; below it, the bar stays the in-flow horizontal box. */
+@media (min-width: 1160px) {
+	.social-bar {
+		position: fixed;
+		top: 50%;
+		/* Anchor the rail's right edge just left of the centered column. */
+		right: calc(50% + (var(--maxw) / 2) + 1rem);
+		transform: translateY(-50%);
+		flex-direction: column;
+		flex-wrap: nowrap;
+		margin-bottom: 0;
+		z-index: 50;
+	}
+
+	/* In the vertical rail, show the tooltip to the right of the icon so it
+	   doesn't cover the icons stacked below it. */
+	.social-bar__item[data-tooltip]::after {
+		top: 50%;
+		left: calc(100% + 0.5rem);
+		transform: translateY(-50%);
+	}
 }
 
 /* ---- Navigation --------------------------------------------------------- */
