@@ -1,7 +1,6 @@
 # Factor of Safety
 
-Website for **Factor of Safety**, a horror game. Static site with a CRT-terminal
-aesthetic (pale phosphor green on black), intended for GitHub Pages.
+Website for **Factor of Safety**, an upcoming digging/horror game. 
 
 ## Structure
 
@@ -18,13 +17,3 @@ images/           Place screenshots / key art here
 - **Add an image** — inside an `.image-frame`, replace the placeholder `<span>`
   with `<img src="images/your-image.png" alt="...">`.
 - **Side-by-side layout** — wrap two modules in `<div class="modules modules--split">`.
-
-## Local preview
-
-Open `index.html` directly in a browser, or serve the folder:
-
-```
-python -m http.server
-```
-
-Then visit <http://localhost:8000>.
