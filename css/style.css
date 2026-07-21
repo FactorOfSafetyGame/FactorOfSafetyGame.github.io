@@ -351,6 +351,42 @@ body {
 	letter-spacing: 1px;
 }
 
+/* ---- Footage showcase (multiple gifs) ----------------------------------- */
+/* Desktop: gifs share a single cinematic 16:9 frame, side by side and
+   touching. Each is cover-cropped so the sides are cut off (the tall,
+   cinematic look). Mobile: they stack vertically to avoid overflow. */
+.footage {
+	display: flex;
+	gap: 0;                 /* no space between the gifs */
+	aspect-ratio: 16 / 9;   /* the shared cinematic frame */
+	border: 1px solid var(--crt-line);
+	overflow: hidden;
+}
+
+.footage img {
+	flex: 1 1 0;   /* split the frame evenly */
+	min-width: 0;  /* allow shrinking below intrinsic width (prevents overflow) */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;   /* crop the sides to fill each half */
+	display: block;
+}
+
+/* Mobile: stack the gifs one above the other, each a full-width cropped
+   banner, still touching. */
+@media (max-width: 640px) {
+	.footage {
+		flex-direction: column;
+		aspect-ratio: auto;   /* height comes from the stacked images */
+	}
+
+	.footage img {
+		flex: none;
+		height: auto;
+		aspect-ratio: 16 / 9;   /* keep a cropped cinematic slice per gif */
+	}
+}
+
 /* ---- Embed container (Itch widget, video, etc.) ------------------------ */
 .embed {
 	display: flex;
