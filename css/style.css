@@ -13,7 +13,9 @@
 	--crt-line:      #1c3a1c;   /* borders, rules                */
 	--crt-glow:      rgba(125, 253, 125, 0.35);
 
+	/* VT323 for "chrome" (titles, bars, nav); a crisp mono for readable body copy */
 	--font-mono: "VT323", "Consolas", "Courier New", monospace;
+	--font-body: "Consolas", "SF Mono", "Menlo", "Courier New", monospace;
 	--maxw: 960px;
 	--gap: 1.5rem;
 }
@@ -131,6 +133,39 @@ body {
 	letter-spacing: 2px;
 }
 
+/* ---- Social widgets ----------------------------------------------------- */
+.site-social {
+	display: flex;
+	gap: 0.75rem;
+	margin-top: 1.25rem;
+}
+
+.site-social a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	border: 1px solid var(--crt-line);
+	color: var(--crt-green);
+	transition: all 0.15s ease;
+}
+
+.site-social a:hover,
+.site-social a:focus {
+	color: var(--crt-green-hot);
+	border-color: var(--crt-green);
+	box-shadow: 0 0 8px var(--crt-glow);
+	outline: none;
+}
+
+.site-social svg {
+	width: 1.3rem;
+	height: 1.3rem;
+	fill: currentColor;
+	filter: drop-shadow(0 0 3px var(--crt-glow));
+}
+
 /* ---- Navigation --------------------------------------------------------- */
 .site-nav {
 	margin-top: 1.25rem;
@@ -193,6 +228,14 @@ body {
 
 .module__body {
 	padding: 1.25rem;
+	/* Readable body copy: crisp mono, larger, brighter, minimal glow so the
+	   scanlines don't chew up the letterforms. */
+	font-family: var(--font-body);
+	font-size: 0.95rem;
+	line-height: 1.75;
+	letter-spacing: 0.2px;
+	color: var(--crt-green-hot);
+	text-shadow: 0 0 1px var(--crt-glow);
 }
 
 .module__body p + p {
@@ -230,6 +273,37 @@ body {
 	letter-spacing: 1px;
 }
 
+/* ---- Embed container (Itch widget, video, etc.) ------------------------ */
+.embed {
+	display: flex;
+	justify-content: center;
+	border: 1px dashed var(--crt-line);
+	padding: 1rem;
+	background: rgba(125, 253, 125, 0.02);
+}
+
+/* Itch's download/purchase widget is a fixed-size iframe; keep it centered
+   and let it shrink on narrow screens without overflowing. */
+.embed iframe {
+	max-width: 100%;
+	border: 0;
+}
+
+/* Use .embed--responsive when embedding something that should fill the width
+   at a fixed aspect ratio (e.g. a video or a full game frame). */
+.embed--responsive {
+	padding: 0;
+	position: relative;
+	aspect-ratio: 16 / 9;
+}
+
+.embed--responsive iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+
 /* Two-up grid for modules that should sit side by side on wide screens */
 .modules--split {
 	grid-template-columns: 1fr;
@@ -239,6 +313,99 @@ body {
 	.modules--split {
 		grid-template-columns: 1fr 1fr;
 	}
+}
+
+/* ---- Image gallery ------------------------------------------------------ */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: 0.75rem;
+}
+
+/* Each thumbnail is a button for keyboard/accessibility. */
+.gallery__item {
+	display: block;
+	padding: 0;
+	border: 1px solid var(--crt-line);
+	background: #000;
+	cursor: pointer;
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+	transition: all 0.15s ease;
+}
+
+.gallery__item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.2s ease;
+}
+
+.gallery__item:hover,
+.gallery__item:focus {
+	border-color: var(--crt-green);
+	box-shadow: 0 0 10px var(--crt-glow);
+	outline: none;
+}
+
+.gallery__item:hover img,
+.gallery__item:focus img {
+	transform: scale(1.05);
+}
+
+/* ---- Lightbox (expanded image overlay) ---------------------------------- */
+.lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	background: rgba(0, 0, 0, 0.88);
+	cursor: zoom-out;
+}
+
+.lightbox.is-open {
+	display: flex;
+}
+
+.lightbox__img {
+	max-width: 92vw;
+	max-height: 88vh;
+	object-fit: contain;
+	border: 1px solid var(--crt-line);
+	box-shadow: 0 0 24px var(--crt-glow);
+	cursor: default;
+}
+
+.lightbox__close {
+	position: absolute;
+	top: 1rem;
+	right: 1.25rem;
+	width: 2.6rem;
+	height: 2.6rem;
+	background: transparent;
+	border: 1px solid var(--crt-line);
+	color: var(--crt-green-hot);
+	font-family: var(--font-mono);
+	font-size: 1.6rem;
+	line-height: 1;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus {
+	border-color: var(--crt-green);
+	box-shadow: 0 0 8px var(--crt-glow);
+	outline: none;
+}
+
+/* Lock background scroll while the lightbox is open. */
+body.no-scroll {
+	overflow: hidden;
 }
 
 /* ---- Footer ------------------------------------------------------------- */

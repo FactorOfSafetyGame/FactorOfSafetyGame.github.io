@@ -28,16 +28,82 @@
 
 				<nav class="site-nav" aria-label="Primary">
 					<a href="index.html">Home</a>
+					<a href="#demo">Demo</a>
 					<a href="#about">About</a>
 					<a href="#media">Media</a>
+					<a href="#gallery">Gallery</a>
 					<a href="#contact">Contact</a>
 				</nav>
+
+				<!-- Social links. Replace each href="#" with the real URL later. -->
+				<div class="site-social" aria-label="Social media">
+					<a href="#" aria-label="YouTube" title="YouTube" rel="noopener" target="_blank">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.11-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.39.52A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.11 2.13c1.89.52 9.39.52 9.39.52s7.5 0 9.39-.52a3 3 0 0 0 2.11-2.13A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+					</a>
+					<a href="#" aria-label="Reddit" title="Reddit" rel="noopener" target="_blank">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 11.78a2.57 2.57 0 0 0-2.57-2.57 2.53 2.53 0 0 0-1.77.72 12.6 12.6 0 0 0-6.6-2.09l1.12-5.28 3.67.78a1.83 1.83 0 1 0 .2-.92l-4.1-.87a.46.46 0 0 0-.54.35l-1.25 5.87a12.6 12.6 0 0 0-6.7 2.08 2.56 2.56 0 1 0-2.83 4.18 5 5 0 0 0-.06.78c0 3.94 4.59 7.14 10.25 7.14s10.26-3.2 10.26-7.14a5 5 0 0 0-.06-.77A2.57 2.57 0 0 0 24 11.78ZM6.44 13.6a1.83 1.83 0 1 1 1.83 1.83A1.83 1.83 0 0 1 6.44 13.6Zm10.2 4.85a6.7 6.7 0 0 1-4.65 1.45 6.7 6.7 0 0 1-4.65-1.45.46.46 0 0 1 .65-.65 5.75 5.75 0 0 0 4 1.19 5.75 5.75 0 0 0 4-1.18.46.46 0 1 1 .65.65Zm-.32-3a1.83 1.83 0 1 1 1.83-1.83 1.83 1.83 0 0 1-1.83 1.82Z"/></svg>
+					</a>
+					<a href="#" aria-label="TikTok" title="TikTok" rel="noopener" target="_blank">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.3v13.28a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 1 1 .77-5.06v-3.36a5.94 5.94 0 0 0-.77-.05 5.95 5.95 0 1 0 5.95 5.95V8.9a7.53 7.53 0 0 0 4.4 1.41V7a4.28 4.28 0 0 1-3.41-1.18Z"/></svg>
+					</a>
+					<a href="#" aria-label="Instagram" title="Instagram" rel="noopener" target="_blank">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.41-10.4a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"/></svg>
+					</a>
+				</div>
 			</header>
 
 			<!-- ===== Main content: sample modules ===== -->
 			<main class="modules">
 
+				<!-- Itch demo embed -->
+				<section class="module" id="demo">
+					<div class="module__bar">Play the demo</div>
+					<div class="module__body">
+						<div class="embed">
+							<!-- REPLACE the ID/URL below with your game's Itch embed.
+							     Get it from your Itch dashboard: Edit game -> "Embed" (or
+							     the "More" menu -> Widget). Paste the <iframe> it gives you
+							     in place of this one. -->
+							<iframe
+								src="https://itch.io/embed/GAME_ID"
+								width="552"
+								height="167"
+								title="Factor of Safety on itch.io">
+								<a href="https://your-username.itch.io/factor-of-safety">Factor of Safety by your-username on itch.io</a>
+							</iframe>
+						</div>
+					</div>
+				</section>
+
 				<!-- Sample text box -->
+				<section class="module" id="about">
+					<div class="module__bar">What is this?</div>
+					<div class="module__body">
+						<p>
+							Factor of Safety is an upcoming digging/horror game featuring material physics. The player needs to dig in a terrain
+							that can collapse at any time if the structural integrity fails.
+						</p>
+						<p>
+							Unlike the current single player demo, the full release of Factor of Safety will be a multiplayer game where groups of players will be tasked with 
+							completing various assignment missions while avoiding danger.
+						</p>
+
+					</div>
+				</section>
+
+				<!-- Sample image container -->
+				<section class="module" id="media">
+					<div class="module__bar">Some footage</div>
+					<div class="module__body">
+						<div class="image-frame">
+							<img src="images/DigCollapse.gif" alt="Describe the image"> 
+							<img src="images/lighting.gif" alt="Describe the image"> 
+							<!-- To use a real image, replace the placeholder above with:
+							<img src="images/your-image.png" alt="Describe the image"> -->
+						</div>
+					</div>
+				</section>
+
 				<section class="module" id="about">
 					<div class="module__bar">Content Creation FAQ</div>
 					<div class="module__body">
@@ -54,42 +120,39 @@
 					</div>
 				</section>
 
-				<!-- Sample image container -->
-				<section class="module" id="media">
-					<div class="module__bar">Some footage</div>
+
+				<!-- Image gallery. Click a thumbnail to expand; click outside to close. -->
+				<section class="module" id="gallery">
+					<div class="module__bar">Gallery</div>
 					<div class="module__body">
-						<div class="image-frame">
-							<img src="images/output.gif" alt="Describe the image"> 
-							<img src="images/lighting.gif" alt="Describe the image"> 
-							<!-- To use a real image, replace the placeholder above with:
-							<img src="images/your-image.png" alt="Describe the image"> -->
+						<div class="gallery">
+							<button class="gallery__item" type="button">
+								<img src="images/outputAtmosphereA.gif" alt="Atmospheric cave environment">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/outputDigging.gif" alt="Player digging through terrain">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/imageA.png" alt="Player digging through terrain">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/imageB.png" alt="Player digging through terrain">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/imageC.png" alt="Atmospheric cave environment">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/imageD.png" alt="Player digging through terrain">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/imageE.png" alt="Player digging through terrain">
+							</button>
+							<button class="gallery__item" type="button">
+								<img src="images/imageF.png" alt="Player digging through terrain">
+							</button>
 						</div>
 					</div>
 				</section>
-
-				<!-- Two modules side by side on wider screens -->
-				<div class="modules modules--split">
-					<section class="module">
-						<div class="module__bar">Sample text box</div>
-						<div class="module__body">
-							<p>
-								A narrower text module. Useful for feature callouts,
-								patch notes, or short blurbs beside an image.
-							</p>
-						</div>
-					</section>
-
-					<section class="module">
-						<div class="module__bar">Sample image container</div>
-						<div class="module__body">
-							<div class="image-frame">
-								<span class="image-frame__placeholder">
-									[ IMAGE PLACEHOLDER ]
-								</span>
-							</div>
-						</div>
-					</section>
-				</div>
 
 			</main>
 
@@ -100,5 +163,13 @@
 
 		</div>
 	</div>
+
+	<!-- Lightbox overlay for the gallery (click backdrop or press Esc to close) -->
+	<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded image" aria-hidden="true">
+		<button class="lightbox__close" type="button" data-close aria-label="Close">&times;</button>
+		<img class="lightbox__img" src="" alt="">
+	</div>
+
+	<script src="js/main.js"></script>
 </body>
 </html>
