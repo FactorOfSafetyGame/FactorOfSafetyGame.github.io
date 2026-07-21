@@ -22,18 +22,20 @@
 
 			<!-- ===== Header ===== -->
 			<header class="site-header">
-				<h1 class="site-title">Factor of Safety<span class="cursor" aria-hidden="true">&nbsp;</span></h1>
-				<p class="site-tagline">Descend and dig your way deep into the contracting earth, every tunnel you carve can bury you alive.
+				<div class="site-header__main">
+					<h1 class="site-title">Factor of Safety<span class="cursor" aria-hidden="true">&nbsp;</span></h1>
+					<p class="site-tagline">Descend and dig your way deep into the contracting earth, every tunnel you carve can bury you alive.
 </p>
 
-				<nav class="site-nav" aria-label="Primary">
-					<a href="index.html">Home</a>
-					<a href="#demo">Demo</a>
-					<a href="#about">About</a>
-					<a href="#media">Media</a>
-					<a href="#gallery">Gallery</a>
-					<a href="#contact">Contact</a>
-				</nav>
+					<nav class="site-nav" aria-label="Primary">
+						<a href="index.html">Home</a>
+						<a href="#demo">Demo</a>
+						<a href="#about">About</a>
+						<a href="#media">Media</a>
+						<a href="#gallery">Gallery</a>
+						<a href="#contact">Contact</a>
+					</nav>
+				</div>
 
 				<!-- Social links. Replace each href="#" with the real URL later. -->
 				<div class="site-social" aria-label="Social media">
@@ -84,8 +86,8 @@
 							that can collapse at any time if the structural integrity fails.
 						</p>
 						<p>
-							Unlike the current single player demo, the full release of Factor of Safety will be a multiplayer game where groups of players will be tasked with 
-							completing various assignment missions while avoiding danger.
+							Unlike the single player demo, the full release of Factor of Safety will be a multiplayer game release on Steam where groups of players will be tasked with 
+							completing various missions while avoiding danger.
 						</p>
 
 					</div>
@@ -164,10 +166,13 @@
 		</div>
 	</div>
 
-	<!-- Lightbox overlay for the gallery (click backdrop or press Esc to close) -->
+	<!-- Lightbox overlay for the gallery. Click backdrop or press Esc to close;
+	     use the side arrows (or Left/Right keys) to step through images. -->
 	<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded image" aria-hidden="true">
 		<button class="lightbox__close" type="button" data-close aria-label="Close">&times;</button>
+		<button class="lightbox__nav lightbox__nav--prev" type="button" data-prev aria-label="Previous image">&#10094;</button>
 		<img class="lightbox__img" src="" alt="">
+		<button class="lightbox__nav lightbox__nav--next" type="button" data-next aria-label="Next image">&#10095;</button>
 	</div>
 
 	<script src="js/main.js"></script>
